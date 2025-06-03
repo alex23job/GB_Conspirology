@@ -6,6 +6,11 @@ using UnityEngine.UI;
 public class MapControl : MonoBehaviour
 {
     [SerializeField] private Button[] arrBtnLocation;
+    [SerializeField] private Text txtTitle;
+    [SerializeField] private Text txtNameNPC;
+    [SerializeField] private Text txtDescr;
+    [SerializeField] private Button btnNext;
+    [SerializeField] private Button btnEnter;
 
     private List<DayInfo> listDays = new List<DayInfo>();
     private int currentDay = 0;
@@ -16,6 +21,8 @@ public class MapControl : MonoBehaviour
     {
         GenerateListDay();
         SetDayButtons();
+        btnNext.interactable = false;
+        btnEnter.interactable = false;
     }
 
     // Update is called once per frame
@@ -53,6 +60,10 @@ public class MapControl : MonoBehaviour
                 }
             }
         }
+        btnNext.interactable = false;
+        txtTitle.text = "";
+        txtNameNPC.text = "";
+        txtDescr.text = "";
     }
 
     private void GenerateListDay()
@@ -82,6 +93,8 @@ public class MapControl : MonoBehaviour
         currentDay++;
         currentDay %= listDays.Count;
         SetDayButtons();
+        btnEnter.interactable = false;
+        btnNext.interactable = false;
     }
 
     private DayInfo GetDayInfo(int index)
@@ -93,4 +106,28 @@ public class MapControl : MonoBehaviour
         return null;
     }
 
+    public void SelectLocation(int numBtn)
+    {
+        SetDayButtons();
+        Button btn = null;
+        if (numBtn >= 0 && numBtn < arrBtnLocation.Length) btn = arrBtnLocation[numBtn];
+        if (btn != null)
+        {
+            DayInfo di = GetDayInfo(currentDay);
+            string title = btn.gameObject.GetComponent<LocationButtonControl>().Title;
+            foreach (LocationInfo li in di.ListLocations)
+            {
+                if (title == li.Title)
+                {
+                    txtTitle.text = title;
+                    txtNameNPC.text = li.NameNPC;
+                    txtDescr.text = li.Description;
+                    btnNext.interactable = true;
+                    btn.gameObject.GetComponent<Image>().color = arButtonColors[0];
+                    btnEnter.interactable = true;
+                    break;
+                }
+            }
+        }
+    }
 }
