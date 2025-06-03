@@ -14,6 +14,7 @@ public class MapControl : MonoBehaviour
 
     private List<DayInfo> listDays = new List<DayInfo>();
     private int currentDay = 0;
+    private int currentLocationIndex = -1;
     private Color[] arButtonColors = new Color[] { Color.green, new Color(1f, 0.7f, 0.3f), Color.red, Color.gray };
 
     // Start is called before the first frame update
@@ -108,6 +109,7 @@ public class MapControl : MonoBehaviour
 
     public void SelectLocation(int numBtn)
     {
+        currentLocationIndex = numBtn;
         SetDayButtons();
         Button btn = null;
         if (numBtn >= 0 && numBtn < arrBtnLocation.Length) btn = arrBtnLocation[numBtn];
@@ -128,6 +130,14 @@ public class MapControl : MonoBehaviour
                     break;
                 }
             }
+        }
+    }
+
+    public void EnterButtonClick()
+    {
+        if (currentLocationIndex >= 0 && currentLocationIndex < 9)
+        {
+            ManagerScene.Instance.LoadLocationScene(currentLocationIndex);
         }
     }
 }
