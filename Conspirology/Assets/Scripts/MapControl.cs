@@ -47,6 +47,7 @@ public class MapControl : MonoBehaviour
                 }
                 if (isOn == false)
                 {
+                    btn.transform.GetChild(1).gameObject.GetComponent<Text>().text = title;
                     btn.gameObject.GetComponent<Image>().color = arButtonColors[3];
                     btn.interactable = false;
                 }
