@@ -8,4 +8,34 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/MapScene.unity
     guid: 9fc0d4010bbf28b4594072e72b8655ab
+  - enabled: 1
+    path: Assets/Scenes/BoardingHouse.unity
+    guid: a6025b1d8f395914a8a7cd7c779c266b
+  - enabled: 1
+    path: Assets/Scenes/BootStation.unity
+    guid: 29a6df0701044c449b92f666db9d5cdb
+  - enabled: 1
+    path: Assets/Scenes/OfisFBI.unity
+    guid: 4735faeeb9290cf4fba23603bfbb9cb8
+  - enabled: 1
+    path: Assets/Scenes/Hospital.unity
+    guid: d00d66a9a5cfe3b44a0a0c9d6077fd72
+  - enabled: 1
+    path: Assets/Scenes/Factory.unity
+    guid: b1879d92c82154d4e8454ac57b9bbdc0
+  - enabled: 1
+    path: Assets/Scenes/University.unity
+    guid: 520cd349bf50b5847b279a0e43da5325
+  - enabled: 1
+    path: Assets/Scenes/House.unity
+    guid: 9da25ceb6ce52804084e829c44791b27
+  - enabled: 1
+    path: Assets/Scenes/BigHouse.unity
+    guid: a9e58f1e6400dde42b42d37ddd844646
+  - enabled: 1
+    path: Assets/PlaneDown.unity
+    guid: 1d724f8de23bea847bd06114601c6809
+  - enabled: 1
+    path: Assets/Scenes/NotebookScene.unity
+    guid: b8701dc80fe42964cb43da9ff91ba09a
   m_configObjects: {}

@@ -140,4 +140,9 @@ public class MapControl : MonoBehaviour
             ManagerScene.Instance.LoadLocationScene(currentLocationIndex);
         }
     }
+
+    public void LoadBookScene()
+    {
+        ManagerScene.Instance.LoadLocationScene(9);
+    }
 }

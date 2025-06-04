@@ -1817,10 +1817,10 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1147900902}
-        m_TargetAssemblyTypeName: ManagerScene, Assembly-CSharp
-        m_MethodName: LoadLocationScene
-        m_Mode: 3
+      - m_Target: {fileID: 655306328}
+        m_TargetAssemblyTypeName: MapControl, Assembly-CSharp
+        m_MethodName: LoadBookScene
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
