@@ -16,9 +16,7 @@ public class DoorMovement : MonoBehaviour
     void Start()
     {
         startPos = door.transform.position;
-        //weight = GetComponent<BoxCollider>().size.x * transform.localScale.x;
         weight = 100 * transform.localScale.x;
-        print($"startPos = <{startPos}>     weight = <{weight}>");
     }
 
     // Update is called once per frame
@@ -28,7 +26,6 @@ public class DoorMovement : MonoBehaviour
         {
             if (door.transform.position.x > targetPos.x)
             {
-                print($"Open: deltaX = {Time.deltaTime} trp.x<{door.transform.position.x}>  tgp.x<{targetPos.x}>  isOp={isOpening}  isCL={isClosing}");
                 door.transform.position -= Vector3.right * speed * Time.deltaTime;
             }
             else
@@ -41,7 +38,6 @@ public class DoorMovement : MonoBehaviour
         {
             if (door.transform.position.x < targetPos.x)
             {
-                print($"Close: deltaX = {Time.deltaTime}");
                 door.transform.position += Vector3.right * speed * Time.deltaTime;
             }
             else
@@ -54,25 +50,17 @@ public class DoorMovement : MonoBehaviour
 
     public void DoorOpen()
     {
-        //if (isOpening) return;
         targetPos = startPos;
         targetPos.x -= weight;
         isOpening = true;
         isClosing = false;
-        //transform.position = startPos;
-        print($"Open: targetPos = <{targetPos}>");
     }
 
     public void DoorClose()
     {
-        //if (isClosing) return;
         targetPos = startPos;
         isClosing = true;
         isOpening = false;
-        /*Vector3 doorPos = startPos;
-        doorPos.x -= weight;
-        transform.position = doorPos;*/
-        print($"Close: targetPos = <{targetPos}>");
     }
 
     private void OnTriggerEnter(Collider other)
