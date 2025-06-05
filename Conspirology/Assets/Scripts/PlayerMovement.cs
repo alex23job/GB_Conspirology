@@ -13,6 +13,8 @@ public class PlayerMovement : MonoBehaviour
 
     Animator anim;
 
+    private float runStart = 0;
+
     private void Awake()
     {
         anim = GetComponent<Animator>();
@@ -39,6 +41,9 @@ public class PlayerMovement : MonoBehaviour
     }
     private void Move(float input)
     {
+        if (input > 0.99f) runStart += Time.deltaTime;
+        else runStart = 0;
+        if (runStart < 3f) input = (input > 0.95f) ? 0.9f : input;
         transform.Translate(Vector3.forward * input * moveSpeed * Time.fixedDeltaTime);//Можно добавить Time.DeltaTime
         anim.SetFloat("speed", input);
     }
