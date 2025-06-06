@@ -5481,11 +5481,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   btnToLeft: {fileID: 1000704768}
   btnToRight: {fileID: 961986774}
-  arrBtnItems: []
+  arrBtnItems:
+  - {fileID: 1587945180}
+  - {fileID: 1591825757}
+  - {fileID: 1070009277}
+  - {fileID: 1718076865}
+  - {fileID: 972836964}
+  - {fileID: 104781304}
   audioSource: {fileID: 1003100490}
-  clickItem: {fileID: 0}
-  clickMerge: {fileID: 0}
-  clickChange: {fileID: 0}
+  clickItem: {fileID: 8300000, guid: 05b2badf05110f14aa0e1cfab44f7489, type: 3}
+  clickMerge: {fileID: 8300000, guid: da95cde4e291dff4c8204be1196f341b, type: 3}
+  clickChange: {fileID: 8300000, guid: f749754fbb777d042bfb26bb7d1be391, type: 3}
+  noSelectColor: {r: 0.9450981, g: 0.8745099, b: 0.82745105, a: 0}
+  selectColor: {r: 0.39337844, g: 0.9811321, b: 0.9709752, a: 1}
 --- !u!1 &1632034360
 GameObject:
   m_ObjectHideFlags: 0
