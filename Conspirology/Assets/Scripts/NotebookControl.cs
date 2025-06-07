@@ -28,7 +28,7 @@ public class NotebookControl : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+
     }
 
     private void ViewItemButtons()
@@ -41,7 +41,7 @@ public class NotebookControl : MonoBehaviour
             if ((selectNote != -1) && (selectNote == i))
             {
                 itemColor = selectColor;
-                
+
             }
             arrBtnItems[i].gameObject.GetComponent<Image>().color = itemColor;
         }
@@ -72,5 +72,10 @@ public class NotebookControl : MonoBehaviour
         audioSource.clip = clickMerge;
         audioSource.Play();
         mergeNote = num;
+    }
+
+    public void OnBtnLupaClick(int num)
+    {
+
     }
 }
