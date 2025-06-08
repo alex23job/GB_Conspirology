@@ -7,6 +7,7 @@ public class GameManager : MonoBehaviour
     public static GameManager Instance;
 
     public NoteBook noteBook = new NoteBook();
+    public string currentDay = "1";
 
     private void Awake()
     {
