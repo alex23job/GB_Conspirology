@@ -5,6 +5,7 @@ using UnityEngine.UI;
 
 public class MapControl : MonoBehaviour
 {
+    [SerializeField] private MapSounds mapSounds;
     [SerializeField] private Button[] arrBtnLocation;
     [SerializeField] private Text txtTitle;
     [SerializeField] private Text txtNameNPC;
@@ -96,6 +97,7 @@ public class MapControl : MonoBehaviour
         SetDayButtons();
         btnEnter.interactable = false;
         btnNext.interactable = false;
+        mapSounds.PlayClickButton();
     }
 
     private DayInfo GetDayInfo(int index)
@@ -131,10 +133,12 @@ public class MapControl : MonoBehaviour
                 }
             }
         }
+        mapSounds.PlayClickItem();
     }
 
     public void EnterButtonClick()
     {
+        mapSounds.PlayClickButton();
         if (currentLocationIndex >= 0 && currentLocationIndex < 9)
         {
             ManagerScene.Instance.LoadLocationScene(currentLocationIndex);
@@ -143,6 +147,7 @@ public class MapControl : MonoBehaviour
 
     public void LoadBookScene()
     {
+        mapSounds.PlayClickButton();
         ManagerScene.Instance.LoadLocationScene(9);
     }
 }
