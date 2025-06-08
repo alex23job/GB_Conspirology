@@ -12,6 +12,9 @@ GameObject:
   - component: {fileID: 7651303891325636961}
   - component: {fileID: 7376496338746682645}
   - component: {fileID: 7522704480075238378}
+  - component: {fileID: 3971594727256926284}
+  - component: {fileID: 4406007799441298927}
+  - component: {fileID: 8365244683277832916}
   m_Layer: 0
   m_Name: FragmentNLO
   m_TagString: Untagged
@@ -104,5 +107,54 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 0.023382684, y: 0.00802982, z: 0.022558441}
+  m_Size: {x: 0.023382684, y: 0.008, z: 0.022558441}
   m_Center: {x: 0, y: 0.0041499147, z: 0}
+--- !u!65 &3971594727256926284
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2530318931464973529}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.046, y: 0.008, z: 0.045}
+  m_Center: {x: 0, y: 0.0041499147, z: 0}
+--- !u!114 &4406007799441298927
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2530318931464973529}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 87c50db31110bea46b40dc0691c37b61, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &8365244683277832916
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2530318931464973529}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d848b0b7d2e33c54b98bd14fbf633741, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  day: 
+  location: 
+  nameNPC: 
+  description: 
