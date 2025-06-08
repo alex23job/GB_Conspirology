@@ -44,7 +44,9 @@ public class PlayerMovement : MonoBehaviour
         if (input > 0.99f) runStart += Time.deltaTime;
         else runStart = 0;
         if (runStart < 3f) input = (input > 0.95f) ? 0.9f : input;
-        transform.Translate(Vector3.forward * input * moveSpeed * Time.fixedDeltaTime);//Можно добавить Time.DeltaTime
+        float mult = 1f;
+        if (runStart >= 3f) mult = 2f;
+        transform.Translate(Vector3.forward * input * moveSpeed * mult * Time.fixedDeltaTime);//Можно добавить Time.DeltaTime
         anim.SetFloat("speed", Mathf.Abs(input));
     }
 

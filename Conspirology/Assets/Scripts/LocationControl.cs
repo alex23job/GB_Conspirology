@@ -7,16 +7,20 @@ using UnityEngine.SceneManagement;
 public class LocationControl : MonoBehaviour
 {
     [SerializeField] private string locationName;
+    [SerializeField] private GameObject infoPanel;
     [SerializeField] private GameObject hintPanel;
     [SerializeField] private GameObject noteItemPanel;
     [SerializeField] private GameObject[] questObjects;
+    [SerializeField] private Button mapBtn;
 
     private GameObject currentQuestObject = null;
+    private int countQuestObjects = 0;
 
     // Start is called before the first frame update
     void Start()
     {
         LoadQuestHints();
+        if (questObjects != null && questObjects.Length == 0) mapBtn.gameObject.GetComponent<Image>().color = Color.green;
     }
 
     private void LoadQuestHints()
@@ -57,7 +61,8 @@ public class LocationControl : MonoBehaviour
     {
         if (currentQuestObject != null)
         {
-            currentQuestObject.GetComponent<QuestHint>().IncrementIndexHint();
+            QuestHint questHint = currentQuestObject.GetComponent<QuestHint>();
+            questHint.IncrementIndexHint();
             QuestNoteItem qni = currentQuestObject.GetComponent<QuestNoteItem>();
             if (qni != null)
             {
@@ -67,6 +72,13 @@ public class LocationControl : MonoBehaviour
                 noteItemPanel.transform.GetChild(2).gameObject.GetComponent<Text>().text = item.NameNPC;
                 noteItemPanel.transform.GetChild(3).gameObject.GetComponent<Text>().text = item.Description;
                 GameManager.Instance.noteBook.AddItem(item);
+                if (questHint.IsEndHint)
+                {
+                    countQuestObjects++;
+                    currentQuestObject.SetActive(false);
+                    if (countQuestObjects == questObjects.Length) mapBtn.gameObject.GetComponent<Image>().color = Color.green;
+                }
+                HintClose();
             }
         }
         noteItemPanel.SetActive(true);
@@ -86,6 +98,11 @@ public class LocationControl : MonoBehaviour
 
     public void LoadMapScene()
     {
+        if (questObjects != null && questObjects.Length > 0 && countQuestObjects < questObjects.Length)
+        {
+            infoPanel.SetActive(true);
+            return;
+        }
         SceneManager.LoadScene("MapScene");
     }
 }

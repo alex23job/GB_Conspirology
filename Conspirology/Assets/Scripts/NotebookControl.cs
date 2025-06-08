@@ -44,6 +44,19 @@ public class NotebookControl : MonoBehaviour
 
             }
             arrBtnItems[i].gameObject.GetComponent<Image>().color = itemColor;
+            NoteItem ni = GameManager.Instance.noteBook.GetItem(i + currentNote);
+            if (ni != null)
+            {
+                arrBtnItems[i].transform.GetChild(0).gameObject.GetComponent<Text>().text = ni.Day;
+                arrBtnItems[i].transform.GetChild(1).gameObject.GetComponent<Text>().text = ni.Location;
+                arrBtnItems[i].transform.GetChild(2).gameObject.GetComponent<Text>().text = ni.NameNPC;
+                arrBtnItems[i].transform.GetChild(3).gameObject.GetComponent<Text>().text = ni.Description;
+                arrBtnItems[i].gameObject.SetActive(true);
+            }
+            else
+            {
+                arrBtnItems[i].gameObject.SetActive(false);
+            }
         }
     }
 
