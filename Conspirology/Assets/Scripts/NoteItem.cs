@@ -81,7 +81,7 @@ public class NoteItem
         }
         else
         {
-            itemDescr = $" {count}) {item.Day} {item.Location} {item.Description}";
+            itemDescr = $" {count}) D{item.Day} <{item.Location}> {item.Description}";
         }
         if (IsMerged)
         {
@@ -89,7 +89,7 @@ public class NoteItem
         }
         else
         {
-            description = $" 1) {day} {location} {description} {itemDescr}";
+            description = $" 1) D{day} <{location}> {description} {itemDescr}";
         }
     }
 

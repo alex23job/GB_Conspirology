@@ -30,6 +30,8 @@ public class QuestObjectList : MonoBehaviour
     {
         listQuestObiects.Add(new QuestObjectInfo("1", "PlaneDown", "FlDatRecorder", new List<string>() { "Это бортовой самописец", "Самописец нужно отдать в лабораторию для расшифровки" }));
         listQuestObiects.Add(new QuestObjectInfo("1", "PlaneDown", "FragmentNLO", new List<string>() { "Странный фрагмент обшивки - точно не от самолёта", "Фрагмент нужно отдать в университет для спектрального анализа" }));
+        listQuestObiects.Add(new QuestObjectInfo("1", "OfisFBI", "Delo", new List<string>() { "Заведено дело о крушении самолёта", "Офицер Томас Планк будет расследовать это дело. Подробности у Дежурного." }));
+        listQuestObiects.Add(new QuestObjectInfo("1", "OfisFBI", "Report", new List<string>() { "Поступил рапорт о крушении самолёта.", "Рапорт приобщён в дело. Нужно побывать на месте крушения, найти бортовой самописец и, возможно, какие-то фрагменты." }));
     }
 }
 

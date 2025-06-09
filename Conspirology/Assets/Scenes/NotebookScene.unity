@@ -740,7 +740,7 @@ RectTransform:
   m_AnchorMin: {x: 0.40125003, y: 0.7816667}
   m_AnchorMax: {x: 0.93375015, y: 0.83500004}
   m_AnchoredPosition: {x: 1.5, y: -1}
-  m_SizeDelta: {x: -266, y: -2}
+  m_SizeDelta: {x: -3, y: -2}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &153134143
 MonoBehaviour:
@@ -1561,7 +1561,7 @@ RectTransform:
   m_AnchorMin: {x: 0.40125003, y: 0.915}
   m_AnchorMax: {x: 0.93875015, y: 0.9666667}
   m_AnchoredPosition: {x: 1.5, y: 0}
-  m_SizeDelta: {x: -270, y: -1}
+  m_SizeDelta: {x: -3, y: -1}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &357864894
 MonoBehaviour:
@@ -2638,7 +2638,7 @@ RectTransform:
   m_AnchorMin: {x: 0.40125003, y: 0.8516667}
   m_AnchorMax: {x: 0.93375015, y: 0.90000004}
   m_AnchoredPosition: {x: 1.5, y: 0}
-  m_SizeDelta: {x: -266, y: 1}
+  m_SizeDelta: {x: -3, y: 1}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &643103782
 MonoBehaviour:
@@ -4430,12 +4430,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a4a05899163eb3a42bc30356b0e4c997, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  locationName: 
+  locationName: NotebookScene
   infoPanel: {fileID: 0}
   hintPanel: {fileID: 0}
   noteItemPanel: {fileID: 0}
   questObjects: []
-  mapBtn: {fileID: 0}
+  mapBtn: {fileID: 928464830}
 --- !u!82 &1003100490
 AudioSource:
   m_ObjectHideFlags: 0

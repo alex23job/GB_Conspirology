@@ -101,8 +101,9 @@ public class NotebookControl : MonoBehaviour
         mergeNote = num;
         if (selectNote != mergeNote)
         {
-            NoteItem ni = GameManager.Instance.noteBook.GetItem(selectNote + currentNote);
-            ni.MergeItem(GameManager.Instance.noteBook.GetItem(mergeNote + currentNote));
+            //NoteItem ni = GameManager.Instance.noteBook.GetItem(selectNote + currentNote);
+            //ni.MergeItem(GameManager.Instance.noteBook.GetItem(mergeNote + currentNote));
+            GameManager.Instance.noteBook.MergeItems(selectNote + currentNote, mergeNote + currentNote);
             ViewItemButtons();
         }
     }

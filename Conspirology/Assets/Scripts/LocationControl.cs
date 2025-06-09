@@ -100,6 +100,7 @@ public class LocationControl : MonoBehaviour
     {
         if (questObjects != null && questObjects.Length > 0 && countQuestObjects < questObjects.Length)
         {
+            infoPanel.transform.GetChild(0).GetComponent<Text>().text = "В этой локации выполнены ещё не все задания !";
             infoPanel.SetActive(true);
             return;
         }
