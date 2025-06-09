@@ -60,6 +60,7 @@ public class NoteItem
             string[] ar = description.Split(')');
             count = ar.Length;
         }
+        else count++;
         string itemDescr = item.Description;
         if (item.IsMerged)
         {
@@ -69,7 +70,7 @@ public class NoteItem
             {
                 index = itemDescr.IndexOf(')', index++);
                 if (index != -1)
-                {
+                {                    
                     string replStr = "";
                     if (index > 2 && itemDescr[index - 2] == ' ') replStr = itemDescr.Substring(index - 1, 1);
                     if (index > 3 && itemDescr[index - 3] == ' ') replStr = itemDescr.Substring(index - 2, 2);
@@ -88,7 +89,7 @@ public class NoteItem
         }
         else
         {
-            description = $" {count}) {day} {location} {description} {itemDescr}";
+            description = $" 1) {day} {location} {description} {itemDescr}";
         }
     }
 

@@ -70,12 +70,25 @@ public class NotebookControl : MonoBehaviour
 
     public void OnBtnLeftClick()
     {
+        int counts = GameManager.Instance.noteBook.CountItems;
+        if (counts > 6 && (currentNote + 3 < counts))
+        {
+            currentNote += 3;
+            ViewItemButtons();
+        }
         audioSource.clip = clickChange;
         audioSource.Play();
     }
 
     public void OnBtnRightClick()
     {
+        int counts = GameManager.Instance.noteBook.CountItems;
+        if (counts > 6 && (currentNote >= 3))
+        {
+            currentNote -= 3;
+        }
+        else currentNote = 0;
+        ViewItemButtons();
         audioSource.clip = clickChange;
         audioSource.Play();
     }
@@ -85,6 +98,12 @@ public class NotebookControl : MonoBehaviour
         audioSource.clip = clickMerge;
         audioSource.Play();
         mergeNote = num;
+        if (selectNote != mergeNote)
+        {
+            NoteItem ni = GameManager.Instance.noteBook.GetItem(selectNote + currentNote);
+            ni.MergeItem(GameManager.Instance.noteBook.GetItem(mergeNote + currentNote));
+            ViewItemButtons();
+        }
     }
 
     public void OnBtnLupaClick(int num)
