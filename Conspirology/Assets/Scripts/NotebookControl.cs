@@ -5,6 +5,7 @@ using UnityEngine.UI;
 
 public class NotebookControl : MonoBehaviour
 {
+    [SerializeField] private GameObject lupaPanel;
     [SerializeField] private Button btnToLeft;
     [SerializeField] private Button btnToRight;
     [SerializeField] private Button[] arrBtnItems;
@@ -108,6 +109,17 @@ public class NotebookControl : MonoBehaviour
 
     public void OnBtnLupaClick(int num)
     {
+        NoteItem ni = GameManager.Instance.noteBook.GetItem(num + currentNote);
+        if (ni != null)
+        {
+            lupaPanel.transform.GetChild(0).gameObject.GetComponent<Text>().text = ni.Day;
+            lupaPanel.transform.GetChild(1).gameObject.GetComponent<Text>().text = ni.Location;
+            lupaPanel.transform.GetChild(2).gameObject.GetComponent<Text>().text = ni.NameNPC;
+            lupaPanel.transform.GetChild(3).gameObject.GetComponent<Text>().text = ni.Description;
+        }
 
+        audioSource.clip = clickItem;
+        audioSource.Play();
+        lupaPanel.SetActive(true);
     }
 }

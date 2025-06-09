@@ -10,7 +10,7 @@ public class LocationControl : MonoBehaviour
     [SerializeField] private GameObject infoPanel;
     [SerializeField] private GameObject hintPanel;
     [SerializeField] private GameObject noteItemPanel;
-    [SerializeField] private GameObject[] questObjects;
+    [SerializeField] private GameObject[] questObjects = null;
     [SerializeField] private Button mapBtn;
 
     private GameObject currentQuestObject = null;
